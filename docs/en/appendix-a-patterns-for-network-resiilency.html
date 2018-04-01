@@ -1,0 +1,551 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Appendix A Patterns for Network Resiliency · 云原生基础架构 - cloudnativego.com</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="cloudnativego.com">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-ghcolors.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="appendix-b-lock-in.html" />
+    
+    
+    <link rel="prev" href="ch09-implementing-cloud-native-infrasctructure.html" />
+    
+
+    
+        <link rel="shortcut icon" href='favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"CloudNativeInfra/CNI","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://cloudnativego.com" target="_blank" class="custom-link">CloudNativeGo</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    About the book
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="foreword.html">
+            
+                <a href="foreword.html">
+            
+                    
+                    Foreword
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="ch01-what-is-cloud-native-infrastructure.html">
+            
+                <a href="ch01-what-is-cloud-native-infrastructure.html">
+            
+                    
+                    Chapter 1. What Is Cloud Native Infrastructure?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="ch02-when-to-adopt-cloud-native.html">
+            
+                <a href="ch02-when-to-adopt-cloud-native.html">
+            
+                    
+                    Chapter 2. When to Adopt Cloud Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="ch03-evolution-of-cloud-native-developments.html">
+            
+                <a href="ch03-evolution-of-cloud-native-developments.html">
+            
+                    
+                    Chapter 3. Evolution of Cloud Native Deployments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="ch04-designing-infrastructure-applicaitons.html">
+            
+                <a href="ch04-designing-infrastructure-applicaitons.html">
+            
+                    
+                    Chapter 4. Designing Infrastructure Applications
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="ch05-developing-infrastructure-applications.html">
+            
+                <a href="ch05-developing-infrastructure-applications.html">
+            
+                    
+                    Chapter 5. Developing Infrastructure Applications
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="ch06-testing-cloud-native-infrastructure.html">
+            
+                <a href="ch06-testing-cloud-native-infrastructure.html">
+            
+                    
+                    Chapter 6. Testing Cloud Native Infrastructure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="ch07-managing-cloud-native-applications.html">
+            
+                <a href="ch07-managing-cloud-native-applications.html">
+            
+                    
+                    Chapter 7. Managing Cloud Native Applications
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="ch08-securing-applications.html">
+            
+                <a href="ch08-securing-applications.html">
+            
+                    
+                    Chapter 8 Securing Applications
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="ch09-implementing-cloud-native-infrasctructure.html">
+            
+                <a href="ch09-implementing-cloud-native-infrasctructure.html">
+            
+                    
+                    Chapter 9 Implementing Cloud Native Infrastructure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.13" data-path="appendix-a-patterns-for-network-resiilency.html">
+            
+                <a href="appendix-a-patterns-for-network-resiilency.html">
+            
+                    
+                    Appendix A Patterns for Network Resiliency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="appendix-b-lock-in.html">
+            
+                <a href="appendix-b-lock-in.html">
+            
+                    
+                    Appendix B Lock-in
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="appendix-c-box-case-study.html">
+            
+                <a href="appendix-c-box-case-study.html">
+            
+                    
+                    Appendix C Box: Case Study
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Appendix A Patterns for Network Resiliency</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="appendix-a-patterns-for-network-resiliency">Appendix A Patterns for Network Resiliency</h1>
+<p>Applications need to be resilient when running in a cloud environment. One important area especially prone to failure is network communications. One common pattern for adding network resiliency is to create a library that is imported into applications, which provides the network resiliency patterns described in this appendix. However, imported libraries become difficult to maintain for services written in many languages, and when new versions of the network library are released, it puts an additional burden on applications to test and redeploy.</p>
+<p>Instead of making applications handle network resiliency logic, it is possible to put a proxy in place that can act as a layer of protection and enhancement for applications.A proxy has the advantage of sheltering the applications from needing additional complex code and minimizing developer effort for initial and ongoing development.</p>
+<p>Network resiliency logic can be handled in the connection layer(physical or SDN), in the application, or via a transparent proxy.While proxies are not part of the traditional network stack, they can be used to transparently manage network resiliency for the applications.</p>
+<p>Transparent proxies can run anywhere in the infrastructure, but are more beneficial the closer they are to the applications. They also need to be as comprehensive as possible in protocols and what Open Systems Interconnection model (OSI model) layers they can proxy.</p>
+<p>Proxies play an active role in infrastructure resiliency by implementing the following patterns:</p>
+<ul>
+<li>Load balancing</li>
+<li>Load shedding</li>
+<li>Service discovery</li>
+<li>Retries and deadlines</li>
+<li>Circuit breaking</li>
+</ul>
+<p>Proxies can also be used to add functionality to applications. Some features include:</p>
+<ul>
+<li>Security and authentication</li>
+<li>Routing (ingress and egress)</li>
+<li>Insight and monitoring</li>
+</ul>
+<h2 id="load-balancing">Load Balancing</h2>
+<p>There are many ways to load balance an application and plenty of reasons why you should always put a load balancer in front of cloud native applications:</p>
+<p>DigitalOcean explains some good reasons in &#x201C;5 DigitalOcean Load Balancer UseCases&#x201D;:</p>
+<ul>
+<li>Horizontal scaling</li>
+<li>High availability</li>
+<li>Application deployments</li>
+<li>Dynamic traffic routing</li>
+</ul>
+<p>Coordinated transparent proxies (e.g., envoy and linkerd) are one way to load balance applications. Some benefits of having a transparent proxy handle load balancing are:</p>
+<ul>
+<li>A view of requests for all endpoints allows for better load-balancing decisions.</li>
+<li>Software-based load balancers allow flexibility in picking the right way to balance the load.</li>
+</ul>
+<p>Transparent proxies don&#x2019;t have to blindly pass traffic to the next router. As Bunyan points out in their blog post &#x201C;Beyond Round Robin: Load Balancing for Latency,&#x201D; they can be centrally coordinated to have a broader view of the infrastructure. This allows the load balancing to globally optimize traffic routing instead of only locally optimizing for quick packet handoffs.</p>
+<p>With more knowledge about endpoints and which services are making and receiving requests, the proxy can be more rational about where to send traffic.</p>
+<h2 id="load-shedding">Load Shedding</h2>
+<p>The Site Reliability Engineering book explains that load shedding is not the same as load balancing. While load balancing tries to find the correct backend to send traffic, load shedding intentionally drops traffic if the application cannot take the request.1</p>
+<p>By dropping the load to protect the application instance, you can ensure the applications don&apos;t restart or are forced into unfavorable conditions. Dropping a request is much faster than waiting for timeouts and requiring applications to restart.</p>
+<p>Load shedding can help protect application instances when something is broken or there is too much traffic. When things are working properly, the application should discover other dependent services with service discovery.</p>
+<h2 id="service-discovery">Service Discovery</h2>
+<p>Service discovery is usually handled by the orchestration system running the services.Transparent proxies can tie into the same data and provide additional features.</p>
+<p>Proxies can enhance standard service discovery by tying multiple sources together(e.g., DNS and a key-value database) and presenting them in a uniform interface.This allows implementors to change their backend without rewriting all application code. If service discovery is handled outside of the application, it may be possible to change the service discovery tooling without rewriting any application code.</p>
+<p>Because the proxy can have a more holistic view of requests in the infrastructure, it can decide when endpoints are healthy or not. This works in conjunction with other features, such as load balancing and retries to get traffic routed to the best endpoint.</p>
+<p>Proxies can also take additional metadata into account when allowing services to discover each other. They can implement logic, such as node latency or &#x201C;distance,&#x201D; to make sure the correct service is discovered for a request.</p>
+<h2 id="retries-and-deadlines">Retries and Deadlines</h2>
+<p>Typically an application would use built-in logic to know what to do with a failed request to an external service. This can also be handled by a proxy without additional application code.</p>
+<p>Proxies intercept all ingress and egress traffic to an application and route the requests. If an outgoing request comes back as failed, the proxy can automatically retry without needing to involve the application. If the request returns for any other reason, the proxy can process appropriately, based on rules in its configuration.</p>
+<p>This is great, so long as the application is resilient to latency. If not, the proxy should return the failure notice based on an application&#x2019;s deadline.</p>
+<p>Deadlines allow applications to specify how long a request is allowed to take. Because the proxy can &#x201C;follow&#x201D; requests to their destination and back, it can enforce deadline policies across all applications that use the proxy.</p>
+<p>When a deadline has been exceeded, the failure is returned to the application, and it can decide the appropriate action. An option may be to degrade the service, but the application may also choose to send an error back to the user.</p>
+<h2 id="circuit-breaking">Circuit Breaking</h2>
+<p>The pattern is named for the same circuit breakers in-home wiring. Circuits default toa &#x201C;closed&#x201D; state when everything is working normally, and allow traffic to flow through the breaker. When failures are detected, the circuit &#x201C;opens&#x201D; and breaks the flow of traffic.</p>
+<blockquote>
+<p>The Retry Pattern enables an application to retry an operation in the expectation that it will succeed. The Circuit Breaker pattern prevents an application from performing an operation that is likely to fail.</p>
+<p>&#x2014;Alex Homer, Cloud Design Patterns: Prescriptive Architecture Guidance for Cloud Applications</p>
+</blockquote>
+<p>A broken circuit can be to an individual endpoint or an entire service. Once it&#x2019;s open, no traffic will be sent, and all attempts to send traffic will immediately return as failed.</p>
+<p>Unlike home circuits, even in an open state, the proxy will test the failed endpoint.Failed endpoints can be put in a &#x201C;half-open&#x201D; state when detected to be available again after a failure. This state will send small amounts of traffic until the endpoint is marked as failed or healthy.</p>
+<p>This pattern can make applications much faster by failing fast and routing only to healthy endpoints. By continually checking endpoints, the network can self-heal and intelligently route traffic.</p>
+<p>In addition to these resiliency features, proxies can enhance applications in the following ways.</p>
+<h2 id="tls-and-auth">TLS and Auth</h2>
+<p>Proxies can terminate transport layer security (TLS) or any other security supported by the proxy. This allows for the security logic to be centrally managed and not re-implemented in every application. New security protocols or certificates can then be updated across the infrastructure without applications needing to be redeployed.</p>
+<p>The same is true for authentication. However, authorization should still be managed by the application because it is usually a more fine-grained, application-specific feature. User session cookies can be validated by the proxy before the application oversees them. This means only authenticated traffic will be seen by the application.</p>
+<p>This will not only save time for the application but can prevent downtimes through certain types of abuses as well.</p>
+<h2 id="routing-ingress-and-egress">Routing (Ingress and Egress)</h2>
+<p>When proxies run in front of all your applications, they control traffic going in and out of the application. They can also manage the traffic going in and out of the cluster.</p>
+<p>Just as reverse proxies can be used to route to backends in an N-tier architecture, the service proxies can be exposed to traffic outside the cluster and used to route requests coming in. This is another data point the proxies can use to know where traffic is coming from and where it is being sent.</p>
+<p>Having a reverse proxy with insight into all the service-to-service communication means route choices can be better informed than traditional reverse proxies.</p>
+<h2 id="insight-and-monitoring">Insight and Monitoring</h2>
+<p>With all of this knowledge about traffic flow inside the infrastructure, the proxy system can expose metrics about individual endpoints and cluster-wide views of traffic.These data points have traditionally been exposed in proprietary network systems or difficult-to-automate protocols (e.g., SNMP).</p>
+<p>Because the proxies know immediately when endpoints are unreachable, they are the first to know when the endpoint is unhealthy. The orchestration system can also check application health, but the application may not know it is unhealthy to report the correct status to the orchestration tool. With knowledge about all endpoints serving the same service, proxies can also be the best place to monitor service health. </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; 2018 cloudnativego.com all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"> Updated at 
+2018-04-01 23:38:28
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ch09-implementing-cloud-native-infrasctructure.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 9 Implementing Cloud Native Infrastructure">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="appendix-b-lock-in.html" class="navigation navigation-next " aria-label="Next page: Appendix B Lock-in">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Appendix A Patterns for Network Resiliency","level":"1.13","depth":1,"next":{"title":"Appendix B Lock-in","level":"1.14","depth":1,"path":"appendix-b-lock-in.md","ref":"appendix-b-lock-in.md","articles":[]},"previous":{"title":"Chapter 9 Implementing Cloud Native Infrastructure","level":"1.12","depth":1,"path":"ch09-implementing-cloud-native-infrasctructure.md","ref":"ch09-implementing-cloud-native-infrasctructure.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","codesnippet","splitter","page-toc-button","editlink","back-to-top-button","-lunr","-search","search-plus","github-buttons@2.1.0","favicon@^0.0.2","tbfed-pagefooter@^0.0.1","3-ba","theme-default","-highlight","prism","prism-themes"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © 2018 cloudnativego.com","modify_label":" Updated at ","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-ghcolors.css"]},"github":{"url":"https://github.com/CloudNativeInfra/CNI"},"editlink":{"label":"Edit this page","multilingual":false,"base":"https://github.com/CloudNativeInfra/CNI/blob/master/"},"splitter":{},"codesnippet":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"page-toc-button":{},"back-to-top-button":{},"prism-themes":{},"github-buttons":{"repo":"CloudNativeInfra/CNI","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"c889b4cfd2df3f575151a52b18610b26"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"search-plus":{}},"theme":"default","author":"cloudnativego.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"云原生基础架构 - cloudnativego.com","language":"en","links":{"sidebar":{"CloudNativeGo":"https://cloudnativego.com"}},"gitbook":"*","description":"云原生基础架构|Cloud Native Infrastructure|cloudnativego.com"},"file":{"path":"appendix-a-patterns-for-network-resiilency.md","mtime":"2018-04-01T15:38:28.189Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-01T15:45:28.856Z"},"basePath":".","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
