@@ -1,8 +1,8 @@
 # Cloud Native Infrastructure
 
-[English](en/SUMMARY.md)	[中文](cn/SUMMARY.md)
+[English](en/SUMMARY.md) | [中文](cn/SUMMARY.md)
 
-Read it online *https://cloudnativego.com/cni*
+Read online *https://cloudnativego.com/cni*
 
 Cloud Native Infrastructure, written by *Justin Garrison* and Heptio Senior Developer Advocate *Kris Nova*, is about patterns and practices for creating infrastructure capable of managing the full life cycle of cloud native applications.
 
