@@ -78,7 +78,7 @@
 
 还有许多关于DevOps的书籍，文章和演讲。尽管本书不关注DevOps实践，但是在实现云原生基础架构时，如果没有DevOps规定的工具，实践和文化，将很难实现。
 
-![f01](../images/f01.png)
+![Cloud Native Landscape](https://raw.githubusercontent.com/cncf/landscape/master/landscape/CloudNativeLandscape_latest.png)
 
 图P-1. CNCF景观
 

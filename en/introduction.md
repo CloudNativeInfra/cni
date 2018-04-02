@@ -78,7 +78,7 @@ Cloud native applications got their start with the definition of Heroku’s 12 f
 
 There are also many books, articles, and talks about DevOps. While we do not focus on DevOps practices in this book, it will be difficult to implement cloud native infra‐structure without already having the tools, practices, and culture DevOps prescribes.
 
-![f01](../images/f01.png)
+![Cloud Native Landscape](https://raw.githubusercontent.com/cncf/landscape/master/landscape/CloudNativeLandscape_latest.png)
 
 Figure P-1. CNCF landscape
 

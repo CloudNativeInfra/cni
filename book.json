@@ -25,14 +25,14 @@
     ],
     "pluginsConfig": {
         "github": {
-            "url": "https://github.com/CloudNativeInfra/CNI"
+            "url": "https://github.com/CloudNativeInfra/cni"
         },
         "editlink": {
-            "base": "https://github.com/CloudNativeInfra/CNI/blob/master/cn",
+            "base": "https://github.com/CloudNativeInfra/cni/blob/master/cn",
             "label": "Edit this page"
         },
         "github-buttons": {
-            "repo": "CloudNativeInfra/CNI",
+            "repo": "CloudNativeInfra/cni",
             "types": ["star"],
             "size": "small"
         },
