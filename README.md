@@ -2,6 +2,8 @@
 
 [English](en/SUMMARY.md)	[中文](cn/SUMMARY.md)
 
+Read it online *https://cloudnativego.com/cni*
+
 Cloud Native Infrastructure, written by *Justin Garrison* and Heptio Senior Developer Advocate *Kris Nova*, is about patterns and practices for creating infrastructure capable of managing the full life cycle of cloud native applications.
 
 With this book, you will:
@@ -15,5 +17,3 @@ With this book, you will:
 ---
 
 We really appreciate the two authors writing this awesome book and it can be downloaded from Internet. It is translated to other languages such as Chinese by cloud native advocate.
-
-*https://cloudnativego.com*
