@@ -1,9 +1,11 @@
 BOOK_NAME := Cloud-Native-Infrastructure
-BOOK_OUTPUT := _book
+BOOK_OUTPUT := docs
 
 .PHONY: build
 build:
 	gitbook build . $(BOOK_OUTPUT)
+	rm -f docs/Makefile
+	rm -f docs/gitbook/images/apple-touch-icon-precomposed-152.png
 
 .PHONY: serve
 serve:
