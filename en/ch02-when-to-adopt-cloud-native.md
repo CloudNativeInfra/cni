@@ -27,7 +27,7 @@ The only interaction humans should have with cloud native applications is during
 
 Another way to know applications are ready is when they need to dynamically scale with multiple instances. Scaling typically implies multiple copies of the same application behind a load balancer. It assumes that applications store state in a storage service (i.e., database) and do not require complex coordination between running instances.
 
-Dynamic application management implies that a human is not doing the work.Application metrics trigger the scaling, and the infrastructure does the right thing to scale the application. This is a basic feature of most cloud environments. Runningautoscaling groups don’t mean you have cloud native infrastructure; but if auto-scaling is a requirement, it may indicate that your applications are ready.
+Dynamic application management implies that a human is not doing the work.Application metrics trigger the scaling, and the infrastructure does the right thing to scale the application. This is a basic feature of most cloud environments. Running autoscaling groups don’t mean you have cloud native infrastructure; but if auto-scaling is a requirement, it may indicate that your applications are ready.
 
 In order for applications to benefit, the people who write the applications and configure the infrastructure need to support this method of working. Without people ready to give up control to software, you’ll never realize the benefits.
 
