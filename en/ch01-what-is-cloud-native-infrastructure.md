@@ -1,6 +1,6 @@
 # CHAPTER 1. What Is Cloud Native Infrastructure?
 
-Infrastructure is all the software and hardware that support applications.1 This includes data centers, operating systems, deployment pipelines, configuration management, and any system or software needed to support the life cycle of applications.
+Infrastructure is all the software and hardware that support applications. This includes data centers, operating systems, deployment pipelines, configuration management, and any system or software needed to support the life cycle of applications.
 
 Countless time and money have been spent on infrastructure. Through years of evolving the technology and refining practices, some companies have been able to run infrastructure and applications at massive scale and with renowned agility. Efficiently running infrastructure accelerates business by enabling faster iteration and shorter times to market.
 
@@ -44,7 +44,7 @@ Hardware virtualization promised to solve some of these problems.
 
 Virtualization emulates a physical server’s hardware in software. A virtual server can be created on demand, is entirely programmable in software, and never wears out so long as you can emulate the hardware.
 
-Using a hypervisor2 increases these benefits because you can run multiple virtual machines (VMs) on a physical server. It also allows applications to be portable because you can move a VM from one physical server to another.
+Using a hypervisor increases these benefits because you can run multiple virtual machines (VMs) on a physical server. It also allows applications to be portable because you can move a VM from one physical server to another.
 
 One problem with running your own virtualization platform, however, is that VMsstill requires hardware to run. Companies still need to have all the people and processes required to run physical servers, but now capacity planning becomes harder because they have to account for VM overhead too. At least, that was the case until the public cloud.
 
@@ -60,7 +60,7 @@ Hosted infrastructure also made consumable HTTP Application Programming Interfac
 
 Running your infrastructure in a cloud does not make your infrastructure cloud native. IaaS still requires infrastructure management. Outside of purchasing and managing physical resources, you can—and many companies do—treat IaaS identically to the traditional infrastructure they used to buy and rack in their own datacenters.
 
-Even without “racking and stacking,” there are still plenty of operating systems, monitoring software, and support tools. Automation tools3 have helped reduce the time it takes to have a running application, but oftentimes ingrained processes can get in the way of reaping the full benefit of IaaS.
+Even without “racking and stacking,” there are still plenty of operating systems, monitoring software, and support tools. Automation tools have helped reduce the time it takes to have a running application, but oftentimes ingrained processes can get in the way of reaping the full benefit of IaaS.
 
 ## Platform as a Service
 
@@ -150,7 +150,7 @@ Cloud native applications acquire these traits through various methods. It can o
 - Resiliency
 - Declarative, not reactive
 
-Microservices
+### Microservices
 
 Applications that are managed and deployed as single entities are often called monoliths. Monoliths have a lot of benefits when applications are initially developed. They are easier to understand and allow you to change major functionality without affecting other services.
 
@@ -178,7 +178,7 @@ To increase the operability of cloud native applications, applications should ex
 
 Moving health responsibilities into the application makes the application much easier to manage and automate. The application should know if it’s running properly and what it relies on (e.g., access to a database) to provide business value. This means developers will need to work with product managers to define what business functions application serves and to write the tests accordingly.
 
-Examples of applications that provide health checks include Zookeeper’s ruok com‐mand7 and etcd’s HTTP /health endpoint.
+Examples of applications that provide health checks include Zookeeper’s ruok command and etcd’s HTTP / health endpoint.
 
 Applications have more than just healthy or unhealthy states. They will go through a startup and shutdown process during which they should report their state through their health check. If the application can let the platform know exactly what state it is in, it will be easier for the platform to know how to operate it.
 
@@ -299,7 +299,7 @@ When applications can trust the resiliency of the communication, they should sto
 
 The declarative communication model turns out to be more robust for many reasons.Most importantly, it standardizes a communication model and it moves the functional implementation of how something gets to the desired state away from the application to a remote API or service endpoint. This helps simplify applications and allows them to behave more predictably with each other.
 
-How Do Cloud Native Applications Impact Infrastructure?
+### How Do Cloud Native Applications Impact Infrastructure?
 
 Hopefully, you can tell that cloud native applications are different than traditional applications. Cloud native applications do not benefit from running directly on PaaS or being tightly coupled to a server’s operating system. They expect to be run in a dynamic environment with mostly autonomous systems.
 
