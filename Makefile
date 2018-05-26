@@ -21,7 +21,7 @@ pdf:
 
 .PHONY: mobi
 mobi:
-	gitbook mobi . $(BOOK_NAME).pdf
+	gitbook mobi . $(BOOK_NAME).mobi
 
 .PHONY: install
 install:
