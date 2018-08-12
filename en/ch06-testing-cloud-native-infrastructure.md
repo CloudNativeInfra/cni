@@ -34,7 +34,7 @@ This is a philosophical question that can be answered in a number of ways. Havin
 
 Identifying the problem space that your infrastructure needs to fill represents the first round of testing that will need to be written.
 
-Planning for the future is another important aspect of infrastructure testing but should be taken lightly. There is a thin line between being sufficiently forward-looking and overengineering. If in doubt, stick with the bare minimum amount of testing logic.
+Planning for the future is another important aspect of infrastructure testing but should be taken lightly. There is a thin line between being sufficiently forward-looking and over engineering. If in doubt, stick with the bare minimum amount of testing logic.
 
 After we have a solid understanding of what we need to demonstrate with our tests, we can look at implementing a testing suite.
 
@@ -127,7 +127,7 @@ Code coverage is the act of programmatically measuring how much of your codebase
 
 If you measure your tests by code coverage, then engineers will write code that can more easily be covered by tests instead of code that is more appropriate for the task.Dan Ariely sums up human behavior this way in his article “You Are What You Measure” for the Harvard Business Review:
 
-Human beings adjust behavior based on the metrics they’re held against. Anything you measure will impel a person to optimize his score on that metric. What you measure is what you’ll get. Period.
+Human beings adjust behavior based on the metrics they’re held against. Anything you measure will impel a person to optimize his score on that metric. What you measure is what you’ll get. 
 
 The only metric we should ever be measuring is our confidence that our infrastructure is working as intended and that we can demonstrate that.
 
@@ -226,7 +226,7 @@ This simple test will use the assertion library we defined earlier to complete a
 1. Attempt to connect to a virtual machine that should be reachable on 10.0.0.17.
 2. From the virtual machine, attempt to assert that the virtual machine can resolve
    google.com and that it returns some IP address.
-3. From the virtual machine, attempt to assert that the virtual machine can route togoogle.com on port 443.
+3. From the virtual machine, attempt to assert that the virtual machine can route to google.com on port 443.
 4. Close the connection to the virtual machine.
 
 This is an extremely powerful program. It introduces a high level of confidence that our infrastructure is working as intended. It also introduces an elegant palette for engineers to define tests without having to worry about how they will be run.

@@ -1,11 +1,12 @@
 {
     "title": "云原生基础设施 - cloudnativego.com",
-    "description": "云原生基础设施|Cloud Native Infrastructure|cloudnativego.com",
+    "description": "云原生基础设施|Cloud Native Infrastructure",
     "language": "zh-hans",
     "author": "cloudnativego.com",
     "links": {
         "sidebar": {
-            "CloudNativeGo": "https://cloudnativego.com"
+            "CloudNativeGo": "https://cloudnativego.com",
+            "Jimmy Song": "https://jimmysong.io"
         }
     },
     "plugins": [
@@ -21,7 +22,8 @@
         "tbfed-pagefooter@^0.0.1",
         "3-ba",
         "theme-default",
-        "-highlight", "prism", "prism-themes"
+        "-highlight", "prism", "prism-themes",
+        "sitemap-general"
     ],
     "pluginsConfig": {
         "github": {
@@ -52,6 +54,9 @@
             "css": [
             "prism-themes/themes/prism-ghcolors.css"
             ]
+        },
+        "sitemap-general": {
+        "prefix": "https://cloudnativego.com/cni/"
         }
     }
 }
