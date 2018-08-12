@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url> <loc>https://cloudnativego.com/cni/cn/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cloudnativego.com/cni/cn/foreword.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cloudnativego.com/cni/cn/introduction.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cloudnativego.com/cni/cn/ch01-what-is-cloud-native-infrastructure.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cloudnativego.com/cni/cn/ch02-when-to-adopt-cloud-native.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cloudnativego.com/cni/cn/ch03-evolution-of-cloud-native-developments.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cloudnativego.com/cni/cn/ch04-designing-infrastructure-applicaitons.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cloudnativego.com/cni/cn/ch05-developing-infrastructure-applications.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cloudnativego.com/cni/cn/ch06-testing-cloud-native-infrastructure.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cloudnativego.com/cni/cn/ch07-managing-cloud-native-applications.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cloudnativego.com/cni/cn/ch08-securing-applications.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cloudnativego.com/cni/cn/ch09-implementing-cloud-native-infrasctructure.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cloudnativego.com/cni/cn/appendix-a-patterns-for-network-resiilency.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cloudnativego.com/cni/cn/appendix-b-lock-in.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cloudnativego.com/cni/cn/appendix-c-box-case-study.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+</urlset>
