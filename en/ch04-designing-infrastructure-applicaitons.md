@@ -2,7 +2,7 @@
 
 In the previous chapter, we learned about representing infrastructure and the various approaches and concerns with deployment tools around it. In this chapter, we look at what, it takes to design applications that deploy and manage infrastructure. We heed the concerns of the previous chapter and focus on opening up the world of infrastructure as software, sometimes called infrastructure as an application.
 
-In a cloud native environment, traditional infrastructure operators need to be infra‐structure software engineers. It is still an emerging practice and differs from other operational roles in the past. We desperately need to begin exploring patterns and setting standards.
+In a cloud native environment, traditional infrastructure operators need to be infrastructure software engineers. It is still an emerging practice and differs from other operational roles in the past. We desperately need to begin exploring patterns and setting standards.
 
 A fundamental difference between infrastructure as code and infrastructure as software is that software continually runs and will create or mutate infrastructure based on the reconciler pattern, which we will explain later in this chapter. Furthermore, the new paradigm behind infrastructure as software is that the software now has a more traditional relationship with the data store and exposes an API for defining the desired state. For instance, the software might mutate the representation of infrastructure as needed in the data store, and very well could manage the data store itself! Desired state changes to reconcile are sent to the software via the API instead of static code repo.
 
@@ -34,7 +34,7 @@ After the initial infrastructure bootstrap problem is solved, we can then use th
 
 ## The API
 
-In earlier chapters, we discussed the various methods for representing infrastructure.In this chapter, we will be exploring the concept of having an API for infrastructure.
+In earlier chapters, we discussed the various methods for representing infrastructure. In this chapter, we will be exploring the concept of having an API for infrastructure.
 
 When the API is implemented in software, it more than likely will be done via a data structure. So, depending on the programming language you are using, it’s safe to think of the API as a class, dictionary, array, object, or struct.
 
@@ -64,7 +64,7 @@ Having these pieces of data stored and easily accessible is a large part of desi
 
 It is important to review Examples 4-1 through 4-4, as they are used as concrete examples for lessons further in the chapter.
 
-A filesystem state store example
+**A filesystem state store example**
 
 Imagine a data store that was simply a directory called state. Within the directory, there would be three files:
 
@@ -151,7 +151,7 @@ serverPools:
     image: ubuntu-16-04-x64
 ```
 
-Notice how the program wrote the assignedSubnetCIDR directive, not the operator.Also, remember how the program updating the API is a sign that a user is interacting with infrastructure as software.
+Notice how the program wrote the assignedSubnetCIDR directive, not the operator. Also, remember how the program updating the API is a sign that a user is interacting with infrastructure as software.
 
 Now, remember this is just an example and does not necessarily advocate for using an abstraction for calculating a subnet CIDR. Different use cases may require different abstractions and implementation in the application. One of the beautiful and powerful things about building infrastructure applications is that users can engineer the software in any way they find necessary to solve their set of problems.
 
@@ -193,6 +193,8 @@ Think of a data structure like a contract or guarantee. Within the context of a 
 The core component of an infrastructure application will be its ability to map a representation to a set of resources. A resource is a single task that will need to be run in order to fulfill the infrastructure requirements. Each of these tasks will be responsible for changing infrastructure in some way.
 
 Basic examples could be deploying a new virtual machine, setting up a new network, or provisioning an existing virtual machine. Each of these units of work will be referred to as a resource. Each data structure should map to some number of resources. The application is responsible for reasoning about the structure and creating the set of resources. An example of how the API maps to individual resources can be seen in Figure 4-1.
+
+![f4-1](../images/f-4-1.jpg)
 
 Figure 4-1. Diagram to map a structure to resources
 
@@ -330,7 +332,7 @@ A reconciliation is implicitly an audit. If nothing has changed, the reconciler 
 
 Furthermore, if there happens to be something that has changed in our infrastructure, the reconciler will detect the change and attempt to correct it. Upon completion of the reconcile, the state of the infrastructure is guaranteed to be accurate. So implicitly, we have audited the infrastructure again.
 
-Auditing and Reconciler Pattern in Configuration Management
+## Auditing and Reconciler Pattern in Configuration Management
 
 Infrastructure engineers may be familiar with the reconciler pattern from configuration management tools, which use similar methods to mutate operating systems. The configuration management tool is passed a set of resources to manage from a set of manifests or recipes defined by the engineer.
 

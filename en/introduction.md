@@ -56,14 +56,14 @@ We would not be here without the countless hours' people have volunteered to wri
 
 This book is organized as follows:
 
-- Chapter 1 explains what cloud native infrastructure is and how we got where we
-  are.
+- Chapter 1 explains what cloud native infrastructure is and how we got where we are.
 - Chapter 2 can help you decide if and when you should adopt the patterns pre‐scribed in later chapters.
 - Chapters 3 and 4 show how infrastructure should be deployed and how to write applications to manage it.
 - Chapter 5 teaches you how to design reliable infrastructure from the start with testing.
 - Chapters 6 and 7 show what managing infrastructure and applications look like.
 - Chapter 8 wraps up and gives some insight into what’s ahead.
-  If you’re like us, you don’t read books from front to back. Here are a few suggestions on broader book themes:
+
+If you’re like us, you don’t read books from front to back. Here are a few suggestions on broader book themes:
 - If you are an engineer focused on creating and maintaining infrastructure, you should probably read Chapters 3 through 6 at a minimum.
 - Application developers can focus on Chapters 4, 5, and 7, about developing infra‐structure tooling as cloud native applications.
 - Anyone not building cloud native infrastructure will most benefit from Chapters1, 2, and 8.

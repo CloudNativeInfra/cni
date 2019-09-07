@@ -24,7 +24,7 @@ The author is what will be defining the infrastructure, usually a human operator
 
 The main concern while authoring infrastructure representation is to make it understandable for the audience. If the target audience is humans, the representation might come in the form of a technical diagram or abstracted code. If the target audience is a program, the representation may need more detailed information and concrete implementation steps.
 
-Despite the audience, the author should make it easy for the audience to consume.This becomes difficult as complexity increases and if the representation is consumed by both humans and programs.
+Despite the audience, the author should make it easy for the audience to consume. This becomes difficult as complexity increases and if the representation is consumed by both humans and programs.
 
 Representation needs to be easy to understand so that it can be accurately parsed.Easy-to-read but inaccurately parsed representation negates the entire effort. The audience should always strive to interpret the representation they were given, and never make assumptions.
 
@@ -120,11 +120,11 @@ ssh user@10.0.0.17 sh ~/vm_provision.sh
 
 ### Infrastructure as Code
 
-Configuration management was once the king of representing infrastructure.1 We can think of configuration management as abstracted scripts that automatically consider the initial state to perform the proper procedures. Most importantly, configuration management allows authors to declare the desired state of a node instead of every step needed to achieve it.
+Configuration management was once the king of representing infrastructure. We can think of configuration management as abstracted scripts that automatically consider the initial state to perform the proper procedures. Most importantly, configuration management allows authors to declare the desired state of a node instead of every step needed to achieve it.
 
 Configuration management was the first step in the direction of infrastructure as code, but the tooling has rarely reached beyond the scope of a single server. Configuration management tools do an excellent job of defining specific resources and what their state should be, but complications arise as infrastructure requires coordination between resources.
 
-For example, the DNS entry for a service should not be available until the service has been provisioned. The service should not be provisioned before the host is available.Failure to coordinate multiple resources across independent nodes has made the abstractions provided by configuration management inadequate. Some tools have added the ability to coordinate configuration between resources, but the coordination has often been procedural, and the responsibility has fallen on humans to order resources and understand desired state.2
+For example, the DNS entry for a service should not be available until the service has been provisioned. The service should not be provisioned before the host is available.Failure to coordinate multiple resources across independent nodes has made the abstractions provided by configuration management inadequate. Some tools have added the ability to coordinate configuration between resources, but the coordination has often been procedural, and the responsibility has fallen on humans to order resources and understand desired state.
 
 Your infrastructure does not consist of independent entities without communication.Your tools to represent the infrastructure need to take that into consideration. So another representation was needed to manage low-level abstractions (e.g., operating systems), as well as provisioning and coordination.
 
@@ -140,7 +140,7 @@ This was a fundamental shift in the industry, as we saw one-off provisioning scr
 
 The new DSL solved the problems of representing infrastructure as a script and became a standard for representing infrastructure. Engineers found themselves developing a better representation of infrastructure as code and allowing Terraform to interpret it. Just as with configuration management code, engineers began storing their infrastructure representations in version control and treating infrastructure architecture as they treat software.
 
-By having a standardized way of representing infrastructure, we liberated ourselves from the pain of having to learn every proprietary cloud API. While not all cloud resources could be abstracted in a single representation, most users could accept cloud lock-in in their code.3 Having a human-readable and machine-parsable representation of infrastructure architecture, not just independent resource declaration, changed the industry forever.
+By having a standardized way of representing infrastructure, we liberated ourselves from the pain of having to learn every proprietary cloud API. While not all cloud resources could be abstracted in a single representation, most users could accept cloud lock-in in their code. Having a human-readable and machine-parsable representation of infrastructure architecture, not just independent resource declaration, changed the industry forever.
 
 > **Deploying from Code**
 >
@@ -274,11 +274,11 @@ The idempotent guarantee is also effective at helping operators perform quality 
 
 We began to notice entire frameworks and toolchains built around this idea of automating arbitrary tasks for repeatability.
 
-As it was with software, so it became with infrastructure. Operators began automat‐ing entire pipelines of managing infrastructure using these representations and deployment tools. The work of an operator now became developing the tooling around automating these tasks and no longer performing the tasks themselves.
+As it was with software, so it became with infrastructure. Operators began automating entire pipelines of managing infrastructure using these representations and deployment tools. The work of an operator now became developing the tooling around automating these tasks and no longer performing the tasks themselves.
 
 ### Handling Failure
 
-Any software engineer can tell you about the importance of handling failures and edge cases in their code. We naturally began to develop these same concerns as infra‐structure administrators.
+Any software engineer can tell you about the importance of handling failures and edge cases in their code. We naturally began to develop these same concerns as infrastructure administrators.
 
 What happens if a deployment job fails in the middle of its execution, or, more importantly, what should happen in that case?
 

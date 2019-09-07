@@ -22,7 +22,7 @@ The abstractions used in an application are now up to the engineer to craft. If 
 
 ## Adding Features
 
-Adding a feature to an infrastructure application could be very simple or quite complex, depending on the nature of the feature. The goal of adding a feature is that we should be able to add new functionality without jeopardizing existing functionality.We never want to introduce a feature that will impact other components of the system in a negative way. Furthermore, we always want to make sure input into the system remains valid for a reasonable amount of time.
+Adding a feature to an infrastructure application could be very simple or quite complex, depending on the nature of the feature. The goal of adding a feature is that we should be able to add new functionality without jeopardizing existing functionality. We never want to introduce a feature that will impact other components of the system in a negative way. Furthermore, we always want to make sure input into the system remains valid for a reasonable amount of time.
 
 Example 5-1 is a concrete example of evolving an infrastructure API described earlier in the book. Let’s call this first version of the API v1.
 
@@ -68,7 +68,7 @@ Example 5-2. v2.json
 }
 ```
 
-Both of these objects are valid, and the application should continue to support both of them. The application should detect that the v2 object intends to use the new DNS feature that was built into the application. The application should be smart enough to navigate the new feature gracefully. When resources are applied to the cloud, the newv2 object’s resource set will be identical to the first v1 object but with the addition of a single DNS resource.
+Both of these objects are valid, and the application should continue to support both of them. The application should detect that the v2 object intends to use the new DNS feature that was built into the application. The application should be smart enough to navigate the new feature gracefully. When resources are applied to the cloud, the new v2 object’s resource set will be identical to the first v1 object but with the addition of a single DNS resource.
 
 This begs an interesting question: what should the application do with older API objects? The application should still create the resources in the cloud but support DNS-less virtual machines.
 
@@ -108,7 +108,7 @@ Example 5-3. v3.json
 }
 ```
 
-With the new data structure that is necessary to define multiple network interfaces, we have deprecated the local Ip directive. But we haven’t removed the concept of defining an IP address, we have simply restructured it. This means we can begin to depreciate the directive in two stages. First, we warn, and then we deny.
+With the new data structure that is necessary to define multiple network interfaces, we have deprecated the local IP directive. But we haven’t removed the concept of defining an IP address, we have simply restructured it. This means we can begin to depreciate the directive in two stages. First, we warn, and then we deny.
 
 In the warning stage, our application can output a fairly nasty warning about the local IP directive no longer being supported. The application can accept the directives defined in the object, and translate the old API version v2 to the new API versionv3 for the user.
 
