@@ -1,6 +1,6 @@
 # Chapter 8 Securing Applications
 
-We’ve already discussed that infrastructure should only be provisioned from cloudnative applications. We know that the infrastructure is also responsible for running those same applications.
+We’ve already discussed that infrastructure should only be provisioned from cloud native applications. We know that the infrastructure is also responsible for running those same applications.
 
 Running infrastructure provisioned and controlled by applications allows us to scale more easily. We scale our infrastructure by learning how to scale applications. We also secure our infrastructure by learning how to secure applications.
 
